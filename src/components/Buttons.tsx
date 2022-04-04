@@ -8,7 +8,7 @@ type DisplayPropsType = {
    res: () => void
 }
 
-export const Display: React.FC<DisplayPropsType> = ({inc, res, counter}) => {
+export const Buttons: React.FC<DisplayPropsType> = ({inc, res, counter}) => {
    //1 вариант
    // const disabledInc = counter !== 5 ? false : true
    // const disabledRes = counter !== 0 ? false : true

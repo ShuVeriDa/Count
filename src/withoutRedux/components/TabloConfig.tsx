@@ -1,4 +1,4 @@
-import classes from '../App.module.css'
+import classes from '../../App.module.css'
 import {ChangeEvent} from "react";
 
 type TabloConfigPropsType = {
@@ -6,7 +6,6 @@ type TabloConfigPropsType = {
    value:  number
    callBack: (value: number) => void
    setDisabledBtnSet: (b: boolean) => void
-
    setChangeValues: (b: boolean) => void
 }
 

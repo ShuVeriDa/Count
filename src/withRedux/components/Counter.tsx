@@ -1,11 +1,10 @@
 import {Tablo} from "./Tablo";
 import {Buttons} from "./Buttons";
 import React, {useState} from "react";
-import classes from '../App.module.css'
+import classes from '../../App.module.css'
 
 export type CounterPropsType = {
    counter: number
-   setCounter: (counter: number) => void
    inc: () => void
    res: () => void
    maxValue: string | number
@@ -13,7 +12,7 @@ export type CounterPropsType = {
    changeValues: boolean
 }
 
-export const Counter: React.FC<CounterPropsType> = ({counter, setCounter, inc, res,...props}) => {
+export const Counter: React.FC<CounterPropsType> = ({counter, inc, res,...props}) => {
    return (
       <div className={classes.Counter}>
          <Tablo counter={counter}

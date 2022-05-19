@@ -1,16 +1,18 @@
-import classes from '../App.module.css'
+import classes from '../../App.module.css'
 import {TabloConfig} from "./TabloConfig";
 import {Button} from "./Button";
+import {useDispatch} from "react-redux";
+import {changeValuesAC, disabledBtnSetAC, maxValueAC, startValueAC} from "../store/counterReducer";
 
 export type CounterConfigPropsType = {
    maxValue: number
    startValue: number
-   setMaxValue: (maxValue: number) => void
-   setStartValue: (startValue: number) => void
    setValue: () => void
    disabledBtnSet: boolean
-   setDisabledBtnSet: (b: boolean) => void
-   setChangeValues: (b: boolean) => void
+   setChangeValues: (chv: boolean) => void
+   setMaxValue: (maxValue: string) => void
+   setStartValue: (startValue: string) => void
+   setDisabledBtnSet: (dsb: boolean) => void
 }
 
 export const CounterConfig = (props: CounterConfigPropsType) => {
@@ -19,6 +21,8 @@ export const CounterConfig = (props: CounterConfigPropsType) => {
       props.setValue()
    }
 
+   const disabledSet = props.maxValue <= props.startValue || props.disabledBtnSet
+
    return (
       <div className={classes.CounterConfig}>
          <div className={classes.configs}>
@@ -26,7 +30,7 @@ export const CounterConfig = (props: CounterConfigPropsType) => {
             <TabloConfig value={props.startValue} title={"start value:"} callBack={props.setStartValue} setDisabledBtnSet={props.setDisabledBtnSet} setChangeValues={props.setChangeValues}/>
          </div>
          <div className={classes.setButton}>
-            <Button title={'set'} callBack={callBack} disabledActive={props.disabledBtnSet}/>
+            <Button title={'set'} callBack={callBack} disabledActive={disabledSet}/>
          </div>
       </div>
    );

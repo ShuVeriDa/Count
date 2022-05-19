@@ -1,4 +1,4 @@
-import classes from '../App.module.css'
+import classes from '../../App.module.css'
 import {FC} from "react";
 
 type ButtonPropsType = {

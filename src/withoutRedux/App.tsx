@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import classes from './App.module.css';
+import classes from '../App.module.css';
 import {Counter} from "./components/Counter";
 import {CounterConfig} from "./components/CounterConfig";
 

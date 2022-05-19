@@ -1,4 +1,4 @@
-import classes from '../App.module.css'
+import classes from '../../App.module.css'
 
 type TabloPropsType = {
    counter: number
@@ -13,13 +13,14 @@ export const Tablo: React.FC<TabloPropsType> = ({counter, maxValue, startValue, 
    const errorStartValue = startValue < 0 || startValue >= maxValue
 
    return (
-      <div className={errorMaxValue || errorStartValue || counter === maxValue || props.changeValues ? `${classes.tablo} ${classes.tabloRed}` : classes.tablo}>
+      <div
+         className={errorMaxValue || errorStartValue || counter === maxValue || props.changeValues ? `${classes.tablo} ${classes.tabloRed}` : classes.tablo}>
          {/*{maxValue === startValue || maxValue < 0 || startValue < 0 || startValue > maxValue ? 'Incorrect value' : counter}*/}
          {
             errorMaxValue || errorStartValue
-            ? 'Incorrect value'
+               ? 'Incorrect value'
                : props.changeValues ? "enter values and press 'set'"
-            : counter
+                  : counter
          }
       </div>
    );

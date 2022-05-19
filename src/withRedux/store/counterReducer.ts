@@ -3,8 +3,6 @@ export const RES_VALUE = "RES-VALUE"
 export const MAX_VALUE = "MAX-VALUE"
 export const SET_VALUE = "SET-VALUE"
 export const START_VALUE = "START-VALUE"
-export const DISABLED_BTN_SET = "DISABLED-BTN-SET"
-export const CHANGE_VALUES = "CHANGE-VALUES"
 export const SET_START_VALUE_FROM_LOCAL_STORAGE = 'SET-START-VALUE-FROM-LOCAL-STORAGE'
 export const SET_MAX_VALUE_FROM_LOCAL_STORAGE = 'SET-MAX-VALUE-FROM-LOCAL-STORAGE'
 
@@ -46,16 +44,6 @@ export const counterReducer = (state: initialStateType = initialState, action: A
             ...state,
             maxValue: action.maxValue
          }
-      case DISABLED_BTN_SET:
-         return {
-            ...state,
-            disabledBtnSet: state.disabledBtnSet
-         }
-      case CHANGE_VALUES:
-         return {
-            ...state,
-            changeValues: state.changeValues
-         }
       case SET_START_VALUE_FROM_LOCAL_STORAGE:
          return {
             ...state,
@@ -76,8 +64,6 @@ type ActionType =
    ReturnType<typeof maxValueAC> |
    ReturnType<typeof startValueAC> |
    ReturnType<typeof setValueAC> |
-   ReturnType<typeof disabledBtnSetAC> |
-   ReturnType<typeof changeValuesAC> |
    ReturnType<typeof setStartValueFromLocalStorage> |
    ReturnType<typeof setMaxValueFromLocalStorage> |
    ReturnType<typeof resValueAC>
@@ -113,20 +99,6 @@ export const startValueAC = (startValue: number) => {
    return {
       type: START_VALUE,
       startValue
-   } as const
-}
-
-export const disabledBtnSetAC = (disabled: boolean) => {
-   return {
-      type: DISABLED_BTN_SET,
-      disabled
-   } as const
-}
-
-export const changeValuesAC = (changeValues: boolean) => {
-   return {
-      type: CHANGE_VALUES,
-      changeValues
    } as const
 }
 

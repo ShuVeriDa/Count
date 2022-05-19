@@ -1,8 +1,6 @@
 import classes from '../../App.module.css'
 import {TabloConfig} from "./TabloConfig";
 import {Button} from "./Button";
-import {useDispatch} from "react-redux";
-import {changeValuesAC, disabledBtnSetAC, maxValueAC, startValueAC} from "../store/counterReducer";
 
 export type CounterConfigPropsType = {
    maxValue: number
